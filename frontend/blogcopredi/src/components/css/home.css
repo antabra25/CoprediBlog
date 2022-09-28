@@ -1,0 +1,21 @@
+
+.main-home-content-wrapper{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    min-height: 100vh;
+    background: url("../../assets/img/bg-home.jpg");
+    background-size: cover;
+    padding-left: 110px;
+    padding-right: 110px;
+
+}
+
+.main-home-title{
+
+    margin-top: 150px;
+    margin-bottom: 125px;
+    font-family: var(--font-title);
+    font-size: 2rem;
+    color: var(--color-primary);
+}
