@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
+import '../css/inputfield.css'
 
 function InputField ({ label, id, type, value, error, handleChange }) {
     return (
-        <div className="form-field">
+        <div className="form-field flex flex-col gap-y-4">
             <label className="form-label" htmlFor={ id }>
                 { label }
             </label>

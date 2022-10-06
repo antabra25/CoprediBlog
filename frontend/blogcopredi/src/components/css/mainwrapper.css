@@ -1,0 +1,10 @@
+.main-wrapper-theme {
+  background-color: var(--color-primary);
+  min-height: 100vh;
+}
+
+.bg-header {
+  background-color: var(--color-black);
+  width: 100%;
+  height: 150px;
+}

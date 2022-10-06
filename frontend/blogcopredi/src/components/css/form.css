@@ -1,0 +1,14 @@
+
+.form-wrapper {
+
+    @apply px-1 py-1 
+
+}
+
+.form-title {
+
+    font-family: var(--font-title);
+    font-size: 2rem;
+    font-weight: 400;
+    color:black;
+}

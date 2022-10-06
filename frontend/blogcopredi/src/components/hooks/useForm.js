@@ -1,28 +1,51 @@
-import {useState} from "react";
+import { useState } from "react";
+import Joi from "joi";
 
+const useForm = (dataInit, formSchema) => {
+  const [dataSchema, setDataSchema] = useState(formSchema);
+  const [formData, setFormData] = useState(dataInit);
+  const [formErrors, setFormErrors] = useState({...dataInit});
 
-const useForm = (initialState = {}) => {
-    const [dataForm, setDataForm] = useState(initialState);
-    const [formErrors, setFormErrors] = useState({});
+  const validate = () => {
+    const schema = Joi.object(dataSchema);
+    const options = { abortEarly: false };
+    const { error } = schema.validate(formData, options);
 
+    if (!error) return null;
 
-    const validate = (data) => {
+    const errors = {};
+    error.details.forEach((item) => (errors[item.path[0]] = item.message));
+    return errors;
+  };
 
-    }
+  const validateProperty = ({ id, value }) => {
+    const obj = { [id]: value };
+    const schema = Joi.object({ [id]: dataSchema[id] });
+    const { error } = schema.validate(obj);
 
-    const handleInputChange = ({target}) => {
-        validate(target);
+    return !error ? null : error.details[0].message;
+  };
 
-    }
-    const handleInputBlur = ({target}) => {
+  const handleChange = ({ target: input }) => {
+    const errors = { ...formErrors };
+    const errorMessage = validateProperty(input);
 
-    }
+    if (errorMessage) errors[input.id] = errorMessage;
+    else delete errors[input.id];
 
+    const data = { ...formData };
+    data[input.id] = input.value;
+    setFormErrors(errors);
+    setFormData(data);
+  };
 
-    return {
-        dataForm,
-        formErrors,
-        handleInputChange,
+  return {
+    formData,
+    formErrors,
+    setFormErrors,
+    handleChange,
+    validate,
+  };
+};
 
-    }
-}
+export default useForm;
