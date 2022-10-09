@@ -50,7 +50,7 @@ const Register = () => {
     calle: Joi.string().alphanum().required().uppercase().label("Calle"),
   };
 
-  const { formData, formErros,setFormErrors, handleChange, validate } = useForm(
+  const { formData, formErrors,setFormErrors, handleChange, validate } = useForm(
     dataInit,
     dataSchema
   );
@@ -70,7 +70,7 @@ const Register = () => {
               id="nombre"
               type="text"
               value={formData.nombre}
-              error={formErros.nombre}
+              error={formErrors.nombre}
               handleChange={handleChange}
               
             />
@@ -79,7 +79,7 @@ const Register = () => {
               id="apellido"
               type="text"
               value={formData.apellido}
-              error={formErros.apellido}
+              error={formErrors.apellido}
               handleChange={handleChange}
               
             />
@@ -88,7 +88,7 @@ const Register = () => {
               id="cedula"
               type="number"
               value={formData.cedula}
-              error={formErros.cedula}
+              error={formErrors.cedula}
               handleChange={handleChange}
              
             />
@@ -97,7 +97,7 @@ const Register = () => {
               id="correo"
               type="email"
               value={formData.correo}
-              error={formErros.correo}
+              error={formErrors.correo}
               handleChange={handleChange}
               
             />
@@ -106,7 +106,7 @@ const Register = () => {
               id="contrasena"
               type="number"
               value={formData.contrasena}
-              error={formErros.contrasena}
+              error={formErrors.contrasena}
               handleChange={handleChange}
               />
               
@@ -115,7 +115,7 @@ const Register = () => {
               id="confirmacion"
               type="number"
               value={formData.confirmacion}
-              error={formErros.confirmacion}
+              error={formErrors.confirmacion}
               handleChange={handleChange}
               
             />
@@ -127,7 +127,7 @@ const Register = () => {
               id="estado"
               type="text"
               value={formData.estado}
-              error={formErros.estado}
+              error={formErrors.estado}
               handleChange={handleChange}
               
             />
@@ -136,7 +136,7 @@ const Register = () => {
               id="municipio"
               type="text"
               value={formData.municipio}
-              error={formErros.municipio}
+              error={formErrors.municipio}
               handleChange={handleChange}
               
             />
@@ -145,7 +145,7 @@ const Register = () => {
               id="parroquia"
               type="text"
               value={formData.parroquia}
-              error={formErros.parroquia}
+              error={formErrors.parroquia}
               handleChange={handleChange}
               
             />
@@ -154,7 +154,7 @@ const Register = () => {
               id="calle"
               type="text"
               value={formData.calle}
-              error={formErros.calle}
+              error={formErrors.calle}
               handleChange={handleChange}
               
             />
