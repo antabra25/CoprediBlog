@@ -13,7 +13,7 @@ function InputField ({ label, id, type, value, error, handleChange }) {
                 value={ value } 
                 id={ id } 
                 type={ type } />
-                { error && <p className="form-error">{ error }</p> }
+                { error && <p className="form-error text-sm font-black">{ error }</p> }
         </div>)
 }
 

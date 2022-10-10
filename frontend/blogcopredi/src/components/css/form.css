@@ -6,9 +6,16 @@
 }
 
 .form-title {
+    color: black;
+    @apply font-title  font-normal text-3xl text-center mt-8 mb-16
 
-    font-family: var(--font-title);
-    font-size: 2rem;
-    font-weight: 400;
-    color:black;
+}
+
+.form-button {
+
+    @apply w-36 h-16 text-xl  font-bold text-white bg-earth rounded shadow hover:bg-black
+}
+
+.form-subtitle {
+    @apply font-content text-base font-bold text-black mb-4
 }

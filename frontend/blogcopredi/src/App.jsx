@@ -20,31 +20,29 @@ import post from "./components/pages/Post";
 
 function App() {
     const currentUser = useContext(userContext)
-    return (
-        <div className="app">
+    return (<div className="app">
             <div className="app-container">
                 <userContext.Provider value={currentUser}>
                     <div className="app-nav">
                         <Nav/>
                     </div>
-                        <Routes>
-                            <Route path="/home" element={<Home/>}/>
-                            <Route path="/login" element={<Login/>}/>
-                            <Route path="/register" element={<Register/>}/>
-                            <Route path="/contact" element={<Contact/>}/>
-                            <Route path="/blog/posts" element={<Posts/>}/>
-                            <Route path="/blog/posts/:id" element={<Post/>}/>
-                            <Route path="/blog/posts/new" element={<AddPost/>}/>
-                            <Route path="/blog/posts/:id/edit" element={<AddPost/>}/>
-                            <Route path="/requests" element={<Requests/>}/>
-                            <Route path="/requests/new" element={<AddRequest/>}/>
-                            <Route path="/hostels" element={<Hostels/>}/>
-                            <Route path="/hostels/new" element={<AddHostel/>}/>
-                        </Routes>
+                    <Routes>
+                        <Route path="/home" element={<Home/>}/>
+                        <Route path="/login" element={<Login/>}/>
+                        <Route path="/register" element={<Register/>}/>
+                        <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/blog/posts" element={<Posts/>}/>
+                        <Route path="/blog/posts/:id" element={<Post/>}/>
+                        <Route path="/blog/posts/new" element={<AddPost/>}/>
+                        <Route path="/blog/posts/:id/edit" element={<AddPost/>}/>
+                        <Route path="/requests" element={<Requests/>}/>
+                        <Route path="/requests/new" element={<AddRequest/>}/>
+                        <Route path="/hostels" element={<Hostels/>}/>
+                        <Route path="/hostels/new" element={<AddHostel/>}/>
+                    </Routes>
                 </userContext.Provider>
             </div>
-        </div>
-    );
+        </div>);
 
 }
 
