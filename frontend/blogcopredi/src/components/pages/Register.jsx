@@ -103,7 +103,7 @@ const Register = () => {
                         <InputField
                             label="Contraseña"
                             id="contrasena"
-                            type="number"
+                            type="text"
                             value={formData.contrasena}
                             error={formErrors.contrasena}
                             handleChange={handleChange}
@@ -112,7 +112,7 @@ const Register = () => {
                         <InputField
                             label="Repita Contraseña"
                             id="confirmacion"
-                            type="number"
+                            type="text"
                             value={formData.confirmacion}
                             error={formErrors.confirmacion}
                             handleChange={handleChange}

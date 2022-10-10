@@ -8,3 +8,7 @@
 .form-label {
     @apply font-content text-black font-extrabold text-sm
 }
+
+.form-error {
+    @apply font-content text-red-500 font-extrabold text-xs
+}
