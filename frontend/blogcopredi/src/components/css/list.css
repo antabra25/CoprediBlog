@@ -1,0 +1,4 @@
+
+.list-posts-wrapper {
+    @apply flex flex-wrap flex-row justify-center mt-8 items-center w-full gap-x-12
+}

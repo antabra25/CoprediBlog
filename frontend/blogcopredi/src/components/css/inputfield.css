@@ -1,6 +1,5 @@
 
 .form-input {
-
     @apply w-[450px] h-16 text-base text-black bg-secondary border-earth border-2 px-4 py-4 rounded focus:outline-none focus:border-black
 }
 

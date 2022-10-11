@@ -1,0 +1,21 @@
+
+.post-card-wrapper {
+    border-radius: 30px;
+    @apply bg-secondary  flex flex-col justify-center items-center gap-y-6 px-6 ;
+}
+
+.post-card-title {
+    @apply font-title text-black font-bold text-3xl mb-2.5
+}
+
+.post-card-image-wrapper {
+    @apply w-[400px] h-[300px]
+}
+
+.post-card-image {
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    @apply w-full h-full object-cover
+}

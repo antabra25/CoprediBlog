@@ -19,10 +19,7 @@
 }
 
 .app {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-
+    @apply flex flex-col w-full ;
 }
 
 
