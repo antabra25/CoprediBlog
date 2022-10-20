@@ -19,7 +19,20 @@ const Posts = () => {
                 {
                     title: "Soy un titulo particular con varial lineas de texto",
                     image: "https://cdn.pixabay.com/photo/2022/10/03/13/26/flower-7495870_960_720.jpg"
-                }]}/>
+                },
+                {
+                    title: "Soy un titulo particular con varial lineas de texto",
+                    image: "https://images.pexels.com/photos/4759915/pexels-photo-4759915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                },
+                {
+                    title: "Soy un titulo particular con varial lineas de texto",
+                    image: "https://cdn.pixabay.com/photo/2022/10/04/16/00/butterfly-7498583_960_720.jpg"
+                },
+                {
+                    title: "Soy un titulo particular con varial lineas de texto",
+                    image: "https://cdn.pixabay.com/photo/2022/10/03/13/26/flower-7495870_960_720.jpg"
+                }
+               ]}/>
         </MainWrapper>
     );
 };

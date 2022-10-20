@@ -4,7 +4,7 @@ import '../css/postcard.css'
 
 const PostCard = ({title, image}) => {
     return (
-        <Card width="400px" height="350px" >
+        <Card width="350px" height="350px">
             <div className="post-card-wrapper">
                 <div className="post-card-image-wrapper">
                     <img className="post-card-image" src={image} alt="post-card-image"/>

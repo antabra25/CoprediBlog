@@ -1,0 +1,5 @@
+
+.footer-container {
+    @apply flex flex-row items-start justify-start w-full h-48 bg-earth;
+
+}
