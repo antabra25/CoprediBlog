@@ -42,6 +42,7 @@ const validatePost = (post) => {
 
 module.exports = {
     Post,
+    validatePost,
     postSchema,
-    validatePost
+
 }
