@@ -3,8 +3,8 @@ import '../css/home.css'
 import Nav from "../common/Nav";
 import HomeCard from "../HomeCard";
 
-const Home = ()=>{
-    return(
+const Home = () => {
+    return (
         <div className="main-home-content-wrapper">
 
             <h1 className="main-home-title">

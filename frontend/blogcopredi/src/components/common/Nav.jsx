@@ -12,7 +12,7 @@ const Nav = () => {
         return (
 
             <div className="w-[140px] h-[60px] local-button round flex flex-col justify-center items-center">
-                <NavLink to="/login" >Iniciar Sesion</NavLink>
+                <NavLink to="/login">Iniciar Sesion</NavLink>
             </div>
 
         )
@@ -32,7 +32,7 @@ const Nav = () => {
 
         <nav className="nav-wrapper">
             <div className="brand-logo ml-6">
-                <NavLink to="/home">Copredi</NavLink>
+                <NavLink to="/">Copredi</NavLink>
             </div>
             <div className="nav-links">
                 <ul className="flex space-x-6">

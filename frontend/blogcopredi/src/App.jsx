@@ -18,6 +18,7 @@ import Hostels from "./components/pages/Hostels";
 import AddHostel from "./components/pages/AddHostel";
 import post from "./components/pages/Post";
 
+
 function App() {
     const currentUser = useContext(userContext)
     return (<div className="app">
@@ -27,7 +28,7 @@ function App() {
                         <Nav/>
                     </div>
                     <Routes>
-                        <Route path="/home" element={<Home/>}/>
+                        <Route path="/" element={<Home/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/register" element={<Register/>}/>
                         <Route path="/contact" element={<Contact/>}/>
@@ -42,6 +43,7 @@ function App() {
                     </Routes>
                 </userContext.Provider>
             </div>
+
         </div>);
 
 }

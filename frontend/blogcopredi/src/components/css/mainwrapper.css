@@ -1,6 +1,6 @@
 .main-wrapper-theme {
 
-  @apply flex flex-col  w-full min-h-screen bg-primary;
+  @apply flex flex-col  w-full min-h-screen bg-primary pb-32;
 }
 
 .bg-header {
