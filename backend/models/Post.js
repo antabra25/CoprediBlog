@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true,
-        minlength: 500,
+        minlength: 100,
     },
     authors: {
         type: [String],
@@ -33,7 +33,7 @@ const Post = mongoose.model('Post', postSchema);
 const validatePost = (post) => {
     const schema = Joi.object({
         title: Joi.string().min(3).max(255).required(),
-        content: Joi.string().min(500).required(),
+        content: Joi.string().min(100).required(),
         authors: Joi.array().items(Joi.string()).required(),
         image: Joi.string().required()
     })
@@ -42,6 +42,6 @@ const validatePost = (post) => {
 
 module.exports = {
     Post,
+    validatePost,
     postSchema,
-    validatePost
 }

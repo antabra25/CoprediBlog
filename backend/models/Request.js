@@ -1,40 +1,48 @@
 const mongoose = require('mongoose');
 const Joi = require('joi')
-const { User } = require('./User');
+Joi.objectId = require('joi-objectid')(Joi)
+const {User} = require('./User');
 
 // request model
 
 
 const requestSchema = new mongoose.Schema({
 
-    user:{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
+    },
+    title: {
+        type: String,
+        required: true,
+        minlength: 10,
+        maxlength: 150,
     },
     message: {
         type: String,
         required: true,
     },
-    status:{
+    status: {
         type: String,
-        enum:['pending','approved','rejected'],
+        enum: ['pending', 'approved', 'rejected'],
         default: 'pending'
     },
-    type:{
+    type: {
         type: String,
         required: true
     },
     date: {
         type: Date,
-        default:Date.now
+        default: Date.now
     }
 })
 
 const Request = mongoose.model('Request', requestSchema)
 
-const validateRequest = (request) =>{
+const validateRequest = (request) => {
     const schema = Joi.object({
         user: Joi.objectId().required(),
+        title: Joi.string().min(5).max(150).required(),
         message: Joi.string().required(),
         type: Joi.string().required()
     })
@@ -45,6 +53,5 @@ const validateRequest = (request) =>{
 module.exports = {
     Request,
     validateRequest
-
 
 }
