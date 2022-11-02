@@ -52,3 +52,8 @@ const validateHostel = (hostel) => {
     return Joi.validate(hostel)
 }
 
+module.exports = {
+    Hostel,
+    validateHostel
+}
+
