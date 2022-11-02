@@ -11,7 +11,7 @@ const postSchema = new mongoose.Schema({
     content: {
         type: String,
         required: true,
-        minlength: 500,
+        minlength: 10,
     },
     authors: {
         type: [String],
@@ -44,5 +44,4 @@ module.exports = {
     Post,
     validatePost,
     postSchema,
-
 }
