@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
 })
 
 
-router.post('/', validate(validateRequest()), async (req, res) => {
+router.post('/', validate(validateRequest), async (req, res) => {
     const user = await User.findById(req.body.user);
     if (!user) return res.status(400).send('Invalid user.');
     const request = new Request({

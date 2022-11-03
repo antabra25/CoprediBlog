@@ -55,3 +55,5 @@ router.delete('/:id', async (req, res) => {
     await Hostel.deleteOne({_id: req.params.id})
     res.status(200).send(hostel)
 })
+
+module.exports = router

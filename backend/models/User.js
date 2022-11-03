@@ -103,5 +103,4 @@ const validateUser = (user) => {
 module.exports = {
     User,
     validateUser,
-    userSchema
 }
