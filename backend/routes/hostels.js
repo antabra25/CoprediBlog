@@ -1,12 +1,15 @@
-const {Hostel, validateHostel} = require('../models/hostel');
+const {Hostel, validateHostel} = require('../models/Hostel');
 const router = require('express').Router();
 const validate = require('../middleware/validate');
+const validateObjectId = require('../middleware/validateObjectId');
+const auth = require('../middleware/auth');
+const admin = require('../middleware/admin');
 
 
 router.get('/', async (req, res) => {
-    const {pageNumber, pageSize} = req.query
-    if (!pageNumber && !pageSize) return res.status(400).send('Bad request')
-    const hostels = await Hostel.find().sort('name').skip((pageNumber - 1) * pageSize).limit(pageSize)
+    const {currentPage, pageSize} = req.query
+    if (!currentPage && !pageSize) return res.status(400).send('Bad request')
+    const hostels = await Hostel.find().sort('name').skip((currentPage - 1) * pageSize).limit(pageSize)
     res.status(200).send(hostels);
 })
 
@@ -22,16 +25,15 @@ router.post('/', validate(validateHostel), async (req, res) => {
     const body = req.body
     const hostel = new Hostel({
         name: body.name,
-        capacity: body.address,
-        population: body.population,
-        address: body.email,
+        capacity: body.capacity,
+        address: body.address,
         gallery: body.gallery,
     })
     await hostel.save()
     res.status(201).send(hostel)
 })
 
-router.put('/:id', validate(validateHostel), async (req, res) => {
+router.put('/:id', [auth, admin, validateObjectId, validate(validateHostel)], async (req, res) => {
 
     const body = req.body
     const hostel = await Hostel.findById(req.params.id)
@@ -48,12 +50,13 @@ router.put('/:id', validate(validateHostel), async (req, res) => {
 })
 
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', [auth, admin, validateObjectId], async (req, res) => {
 
-    const hostel = await Hostel.findById(req.params.id)
-    if (!hostel) return res.status(404).send(`The posts with ${req.params.id} not exists`)
-    await Hostel.deleteOne({_id: req.params.id})
-    res.status(200).send(hostel)
-})
+        const hostel = await Hostel.findById(req.params.id)
+        if (!hostel) return res.status(404).send(`The posts with ${req.params.id} not exists`)
+        await Hostel.deleteOne({_id: req.params.id})
+        res.status(200).send(hostel)
+    }
+)
 
 module.exports = router

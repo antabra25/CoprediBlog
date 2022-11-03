@@ -12,7 +12,7 @@ const addressSchema = new mongoose.Schema({
         required: true,
         uppercase: true,
     },
-    Municipality: {
+    municipality: {
         type: String,
         required: true,
         uppercase: true,
@@ -20,7 +20,7 @@ const addressSchema = new mongoose.Schema({
     parish: {
         type: String,
         required: true,
-        upperCase: true,
+        uppercase: true,
     },
     street: {
         type: String,
@@ -43,11 +43,10 @@ const userSchema = new mongoose.Schema({
         minlength: 3,
         maxlength: 50
     },
-    personal_id: {
+    personalId: {
         type: Number,
         required: true,
         min: 900000,
-
     },
     email: {
         type: String,
@@ -59,7 +58,7 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         minlength: 8,
-        maxlength: 45,
+        maxlength: 1024,
     },
     isAdmin: {
         type: Boolean,
@@ -93,9 +92,15 @@ const validateUser = (user) => {
     const schema = Joi.object({
         first_name: Joi.string().min(3).max(50).required(),
         last_name: Joi.string().min(3).max(50).required(),
-        personal_id: Joi.number().min(900000).required(),
+        personalId: Joi.number().min(900000).required(),
         email: Joi.string().min(5).max(255).required().email(),
-        password: Joi.string().min(8).max(45).required(),
+        password: Joi.string().min(8).max(1024).required(),
+        address: Joi.object({
+            state: Joi.string().required(),
+            municipality: Joi.string().required(),
+            parish: Joi.string().required(),
+            street: Joi.string().required(),
+        })
     })
     return schema.validate(user);
 

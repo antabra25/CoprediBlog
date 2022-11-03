@@ -10,7 +10,7 @@ const hostels = require('./routes/hostels')
 const users = require('./routes/users')
 const auth = require('./routes/auth')
 
-winston.add(winston.transports.File, {filename: 'logfile.log'})
+//winston.add(winston.transports.File, {filename: 'logfile.log'})
 
 if (!config.get('jwtPrivateKey')) {
     console.error('FATAL ERROR: jwtPrivateKey is not defined.')
@@ -35,7 +35,9 @@ app.use('/api/posts', posts);
 app.use('/api/requests', requests);
 app.use('/api/hostels', hostels);
 app.use('/api/users', users);
-app.use('/api/auth', auth);
+app.use('/api/login', auth);
+
+
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));
 

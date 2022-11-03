@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const auth = require('../middleware/auth')
 const _ = require('lodash')
-const {User, validateUser} = require('../models/User');
+const {User, validateUser, addressSchema} = require('../models/User');
 const validate = require('../middleware/validate')
 
 router.get('/', [auth], async (req, res) => {
@@ -21,16 +21,10 @@ router.post('/', [validate(validateUser)], async (req, res) => {
     user = new User({
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        personal_id: req.body.personal_id,
+        personalId: req.body.personalId,
         email: req.body.email,
         password: req.body.password,
-        address: {
-            state: req.body.state,
-            municipality: req.body.municipality,
-            parish: req.body.parish,
-            street: req.body.street,
-
-        }
+        address: req.body.address,
     })
     user.password = await User.hashPassword(user.password)
     await user.save()

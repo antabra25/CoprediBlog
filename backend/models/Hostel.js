@@ -46,10 +46,15 @@ const validateHostel = (hostel) => {
     const schema = Joi.object({
         name: Joi.string().min(5).max(255).required(),
         capacity: Joi.number().min(0).required(),
-        address: Joi.object().required(),
+        population: Joi.number().min(0),
+        status: Joi.string().valid('active', 'closed'),
+        address: Joi.object({
+            city: Joi.string().required(),
+            street: Joi.string().required(),
+        }).required(),
         gallery: Joi.array().items(Joi.string())
     })
-    return Joi.validate(hostel)
+    return schema.validate(hostel)
 }
 
 module.exports = {

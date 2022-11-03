@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {Request, validateRequest} = require('../models/Request');
 const {User} = require('../models/User');
-const validate = require('./middleware/validate');
+const validate = require('../middleware/validate');
 
 
 router.get('/', async (req, res) => {
@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
 })
 
 
-router.post('/', validate(validateRequest), async (req, res) => {
+router.post('/', [validate(validateRequest)], async (req, res) => {
     const user = await User.findById(req.body.user);
     if (!user) return res.status(400).send('Invalid user.');
     const request = new Request({
