@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card.jsx";
-import '../css/postcard.css'
+
 
 const PostCard = ({title, image}) => {
     return (

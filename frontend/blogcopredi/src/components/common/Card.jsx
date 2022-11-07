@@ -1,6 +1,6 @@
 import React from "react";
 import propTypes from "prop-types";
-import '../css/card.css'
+
 
 
 const Card = ({children, height, width, border}) => {

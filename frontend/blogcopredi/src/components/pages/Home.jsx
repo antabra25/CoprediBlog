@@ -1,6 +1,4 @@
 import React from "react";
-import '../css/home.css'
-import Nav from "../common/Nav";
 import HomeCard from "../HomeCard";
 
 const Home = () => {

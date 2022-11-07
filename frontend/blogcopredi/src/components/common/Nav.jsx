@@ -3,7 +3,7 @@ import {useContext} from "react";
 import {userContext} from "../context/userContext";
 import {NavLink} from "react-router-dom";
 import Button from "./Button";
-import '../css/nav.css'
+
 
 const Nav = () => {
 
@@ -21,7 +21,7 @@ const Nav = () => {
     const logoutBtn = () => {
         return (
             <div className="btn-wrapper">
-                <Button className="btn-sm rounded">
+                <Button className="rounded-3xl">
                     Cerrar Sesión
                 </Button>
             </div>

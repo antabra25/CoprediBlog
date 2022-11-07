@@ -1,6 +1,6 @@
 import React from "react";
 import Footer from "./Footer.jsx";
-import "../css/mainwrapper.css";
+
 
 const MainWrapper = ({children}) => {
     return (

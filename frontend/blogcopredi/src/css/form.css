@@ -19,3 +19,7 @@
 .form-subtitle {
     @apply font-content text-base font-bold text-black mb-4
 }
+
+.form-subtitle-base {
+    @apply font-content text-black font-extrabold text-base
+}

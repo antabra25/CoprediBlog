@@ -1,5 +1,4 @@
 import React from "react";
-import '../css/login.css'
 import LoginForm from "../LoginForm";
 
 const Login = () => {

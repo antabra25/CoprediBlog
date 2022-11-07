@@ -1,6 +1,6 @@
 import React from "react";
 import propTypes from "prop-types";
-import "../css/inputsearch.css";
+
 
 
 const InputSearch = ({placeholder, onChange,className}) => {

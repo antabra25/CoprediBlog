@@ -1,5 +1,4 @@
 import React from "react";
-import './css/homecard.css'
 import Card from "./common/Card";
 import Button from "./common/Button";
 

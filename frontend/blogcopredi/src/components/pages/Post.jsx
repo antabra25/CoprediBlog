@@ -1,5 +1,4 @@
 import React from "react";
-import '../css/post.css';
 import MainWrapper from "../common/MainWrapper.jsx";
 
 const Post = ({title, content, image}) => {
