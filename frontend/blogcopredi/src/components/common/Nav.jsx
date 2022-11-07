@@ -11,7 +11,7 @@ const Nav = () => {
     const authBtn = () => {
         return (
 
-            <div className="w-[140px] h-[60px] local-button round flex flex-col justify-center items-center">
+            <div className="w-[140px] h-[60px] bg-earth rounded-3xl font-title text-white  flex flex-col justify-center items-center hover:bg-black">
                 <NavLink to="/login">Iniciar Sesion</NavLink>
             </div>
 

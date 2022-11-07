@@ -36,7 +36,7 @@ const LoginForm = () => {
                         {formErrors.clave && <p className="form-error">{formErrors.clave}</p>}
                     </div>
                     <div className="login-form-control">
-                        <FormButton text="Entrar" className={""} validate={validate} />
+                        <FormButton text="Entrar" className={"button button-sm bg-earth"} validate={validate} />
                     </div>
                 </form>
             </div>

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 function FormButton({text, validate, className}) {
     return (
-        <button disabled={validate()} className={`form-button ${className}`} type="submit">
+        <button disabled={validate()} className={className} type="submit">
             {text}
         </button>
     )

@@ -17,7 +17,7 @@ const HomeCard = ()=>{
                 afectados por alguna tragadia.
                 </p>
 
-                <Button className="btn-md top-3">Solicitar ayuda</Button>
+                <Button className="button button-sm mt-8 ">Solicitar ayuda</Button>
             </div>
         </Card>
 

@@ -161,7 +161,7 @@ const Register = () => {
                     </div>
                 </div>
                 <FormFooter>
-                    <FormButton text="Enviar" validate={validate}/>
+                    <FormButton text="Enviar" validate={validate} className="button button-md bg-earth rounded-3xl"/>
                 </FormFooter>
             </Form>
         </MainWrapper>);
