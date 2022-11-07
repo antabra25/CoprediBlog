@@ -4,6 +4,7 @@ import {useContext} from "react";
 import {Route, Routes, BrowserRouter as Router} from "react-router-dom";
 
 import './App.css';
+import './index.css'
 import Nav from "./components/common/Nav";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";

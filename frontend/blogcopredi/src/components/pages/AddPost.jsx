@@ -1,5 +1,4 @@
 import React from "react";
-import '../css/addpost.css'
 import Joi from "joi";
 import useForm from "../hooks/useForm.js";
 import Form from "../common/Form.jsx";

@@ -6,8 +6,8 @@ import FormFooter from "../common/FormFooter";
 import FormButton from "../common/FormButton";
 import InputField from "../common/InputField";
 import MainWrapper from "../common/MainWrapper";
-import "../css/register.css";
-import "../css/general.css";
+
+
 import {useEffect} from "react";
 
 const Register = () => {
@@ -30,7 +30,7 @@ const Register = () => {
         cedula: Joi.number()
             .integer()
             .positive()
-            .min(1000000)
+            .min(100000)
             .required()
             .label("Cedula"),
         correo: Joi.string().required().email({tlds: false}).label("Correo"),
@@ -63,7 +63,7 @@ const Register = () => {
             <Form title="Registro" size="w-full" handleSubmit={handleSubmit}>
                 <div className="form flex flex-row gap-x-32 justify-center">
                     <div className="column">
-                        <h2 className="form-subtitle">Perfil</h2>
+                        <h2 className="form-subtitle-base">Perfil</h2>
                         <InputField
                             label="Nombre"
                             id="nombre"
@@ -103,7 +103,7 @@ const Register = () => {
                         <InputField
                             label="Contraseña"
                             id="contrasena"
-                            type="text"
+                            type="password"
                             value={formData.contrasena}
                             error={formErrors.contrasena}
                             handleChange={handleChange}
@@ -112,7 +112,7 @@ const Register = () => {
                         <InputField
                             label="Repita Contraseña"
                             id="confirmacion"
-                            type="text"
+                            type="password"
                             value={formData.confirmacion}
                             error={formErrors.confirmacion}
                             handleChange={handleChange}
@@ -121,7 +121,7 @@ const Register = () => {
                     </div>
 
                     <div className="column">
-                        <h2 className="form-subtitle">Ubicacion</h2>
+                        <h2 className="form-subtitle-base">Ubicacion</h2>
                         <InputField
                             label="Estado"
                             id="estado"
