@@ -31,13 +31,13 @@ const addressSchema = new mongoose.Schema({
 
 // USER MODEL
 const userSchema = new mongoose.Schema({
-    first_name: {
+    name: {
         type: String,
         required: true,
         minlength: 3,
         maxlength: 50
     },
-    last_name: {
+    lastName: {
         type: String,
         required: true,
         minlength: 3,
@@ -64,6 +64,12 @@ const userSchema = new mongoose.Schema({
         type: Boolean,
         default: false
     },
+    phone: {
+        type: String,
+        minlength: 10,
+        maxlength: 11,
+        required: true
+    },
     address: addressSchema,
 })
 
@@ -77,8 +83,8 @@ userSchema.methods.generateAuthToken = function () {
     const data = {
         _id: this._id,
         isAdmin: this.isAdmin,
-        first_name: this.first_name,
-        last_name: this.last_name,
+        name: this.name,
+        lastName: this.lastName,
         email: this.email,
     }
     const token = jwt.sign(data, config.get('jwtPrivateKey'));
@@ -90,17 +96,19 @@ const User = mongoose.model('User', userSchema)
 const validateUser = (user) => {
 
     const schema = Joi.object({
-        first_name: Joi.string().min(3).max(50).required(),
-        last_name: Joi.string().min(3).max(50).required(),
+        name: Joi.string().min(3).max(50).required(),
+        lastName: Joi.string().min(3).max(50).required(),
         personalId: Joi.number().min(900000).required(),
         email: Joi.string().min(5).max(255).required().email(),
         password: Joi.string().min(8).max(1024).required(),
-        address: Joi.object({
-            state: Joi.string().required(),
-            municipality: Joi.string().required(),
-            parish: Joi.string().required(),
-            street: Joi.string().required(),
-        })
+        isAdmin: Joi.boolean(),
+        phone: Joi.string().required(),
+        state: Joi.string().required(),
+        municipality: Joi.string().required(),
+        parish: Joi.string().required(),
+        street: Joi.string().required(),
+
+
     })
     return schema.validate(user);
 

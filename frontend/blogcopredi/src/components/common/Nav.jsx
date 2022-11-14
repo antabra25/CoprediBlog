@@ -1,17 +1,18 @@
 import React from "react";
 import {useContext} from "react";
-import {userContext} from "../context/userContext";
+import {UserContext} from "../context/userContext";
 import {NavLink} from "react-router-dom";
 import Button from "./Button";
 
 
 const Nav = () => {
 
-    const currentUser = useContext(userContext)
+    const {currentUser, logoutUser} = useContext(UserContext)
     const authBtn = () => {
         return (
 
-            <div className="w-[140px] h-[60px] bg-earth rounded-3xl font-title text-white  flex flex-col justify-center items-center hover:bg-black">
+            <div
+                className="w-[140px] h-[60px] bg-earth rounded-3xl font-title text-white  flex flex-col justify-center items-center hover:bg-black">
                 <NavLink to="/login">Iniciar Sesion</NavLink>
             </div>
 
@@ -21,7 +22,7 @@ const Nav = () => {
     const logoutBtn = () => {
         return (
             <div className="btn-wrapper">
-                <Button className="rounded-3xl">
+                <Button onClick={logoutUser} className="">
                     Cerrar Sesión
                 </Button>
             </div>

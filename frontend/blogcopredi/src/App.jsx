@@ -1,10 +1,7 @@
-import React from 'react';
-import {userContext} from "./components/context/userContext";
-import {useContext} from "react";
+import React, {useEffect} from 'react';
+import {UserContext} from "./components/context/userContext";
 import {Route, Routes, BrowserRouter as Router} from "react-router-dom";
-
-import './App.css';
-import './index.css'
+import {ToastContainer} from "react-toastify";
 import Nav from "./components/common/Nav";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
@@ -17,35 +14,50 @@ import Contact from "./components/pages/Contact";
 import Post from "./components/pages/Post";
 import Hostels from "./components/pages/Hostels";
 import AddHostel from "./components/pages/AddHostel";
-import post from "./components/pages/Post";
+import useUser from "./components/hooks/useUser";
+import './App.css';
+import './index.css'
 
 
 function App() {
-    const currentUser = useContext(userContext)
-    return (<div className="app">
-            <div className="app-container">
-                <userContext.Provider value={currentUser}>
-                    <div className="app-nav">
-                        <Nav/>
-                    </div>
-                    <Routes>
-                        <Route path="/" element={<Home/>}/>
-                        <Route path="/login" element={<Login/>}/>
-                        <Route path="/register" element={<Register/>}/>
-                        <Route path="/contact" element={<Contact/>}/>
-                        <Route path="/blog/posts" element={<Posts/>}/>
-                        <Route path="/blog/posts/:id" element={<Post/>}/>
-                        <Route path="/blog/posts/new" element={<AddPost/>}/>
-                        <Route path="/blog/posts/:id/edit" element={<AddPost/>}/>
-                        <Route path="/requests" element={<Requests/>}/>
-                        <Route path="/requests/new" element={<AddRequest/>}/>
-                        <Route path="/hostels" element={<Hostels/>}/>
-                        <Route path="/hostels/new" element={<AddHostel/>}/>
-                    </Routes>
-                </userContext.Provider>
-            </div>
+    const {
+        currentUser,
+        setCurrentUser,
+        setCurrentUserFromToken,
+        loginUser,
+        logoutUser
+    } = useUser()
 
-        </div>);
+    useEffect(() => {
+        setCurrentUserFromToken()
+    }, [])
+
+
+    return (<div className="app">
+        <div className="app-container">
+
+            <UserContext.Provider value={{currentUser, setCurrentUser, loginUser, logoutUser}}>
+                <div className="app-nav">
+                    <Nav/>
+                </div>
+                <Routes>
+                    <Route path="/" element={<Home/>}/>
+                    <Route path="/login" element={<Login/>}/>
+                    <Route path="/register" element={<Register/>}/>
+                    <Route path="/contact" element={<Contact/>}/>
+                    <Route path="/blog/posts" element={<Posts/>}/>
+                    <Route path="/blog/posts/:id" element={<Post/>}/>
+                    <Route path="/blog/posts/new" element={<AddPost/>}/>
+                    <Route path="/blog/posts/:id/edit" element={<AddPost/>}/>
+                    <Route path="/requests" element={<Requests/>}/>
+                    <Route path="/requests/new" element={<AddRequest/>}/>
+                    <Route path="/hostels" element={<Hostels/>}/>
+                    <Route path="/hostels/new" element={<AddHostel/>}/>
+                </Routes>
+            </UserContext.Provider>
+        </div>
+
+    </div>);
 
 }
 

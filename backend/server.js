@@ -1,13 +1,12 @@
 const winston = require('winston')
-const error = require('./middleware/error')
 const express = require('express');
 const app = express();
 
-
-require('./startup/routes')(app);
-require('./startup/db')();
+//require('./startup/exceptionsHandler')();
 require('./startup/config')();
-app.use(error)
+require('./startup/cors')(app);
+require('./startup/db')();
+require('./startup/routes')(app);
 
 
 const port = process.env.PORT || 3000;

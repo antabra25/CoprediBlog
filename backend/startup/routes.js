@@ -4,6 +4,7 @@ const requests = require("../routes/requests");
 const hostels = require("../routes/hostels");
 const users = require("../routes/users");
 const auth = require("../routes/auth");
+const error = require('../middleware/error')
 module.exports = (app) => {
     app.use(express.json());
     app.use('/api/posts', posts);
@@ -11,4 +12,7 @@ module.exports = (app) => {
     app.use('/api/hostels', hostels);
     app.use('/api/users', users);
     app.use('/api/login', auth);
+    app.use(error)
+
+
 }

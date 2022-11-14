@@ -19,12 +19,19 @@ router.post('/', [validate(validateUser)], async (req, res) => {
     if (user) return res.status(400).send('User already registered.')
 
     user = new User({
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
+        name: req.body.name,
+        lastName: req.body.lastName,
         personalId: req.body.personalId,
         email: req.body.email,
         password: req.body.password,
-        address: req.body.address,
+        phone: req.body.phone,
+        isAdmin: req.body.isAdmin,
+        address: {
+            state: req.body.state,
+            municipality: req.body.municipality,
+            parish: req.body.parish,
+            street: req.body.street
+        }
     })
     user.password = await User.hashPassword(user.password)
     await user.save()

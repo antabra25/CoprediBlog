@@ -3,7 +3,7 @@ import propTypes from "prop-types";
 
 const Button = ({children, onClick, className}) => {
     return (
-        <button className={`local-button ${className}`} onClick={() => onClick}>
+        <button className={`local-button ${className}`} onClick={onClick}>
             {children}
         </button>
     )
