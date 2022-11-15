@@ -6,9 +6,12 @@ import PostCard from "./common/PostCard.jsx";
 const ListPosts = ({posts}) => {
     return (
         <div className="list-posts-wrapper">
-            {posts.map((post, index) => (
-                <PostCard key={index} title={post.title} image={post.image}/>
-            ))}
+            <div className="list-posts">
+                {posts.map((post, index) => (
+                    <PostCard key={index} title={post.title} image={post.image}/>
+                ))}
+            </div>
+
         </div>
     );
 }

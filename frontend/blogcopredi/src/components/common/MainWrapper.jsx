@@ -7,7 +7,12 @@ const MainWrapper = ({children}) => {
         <>
             <div className="main-wrapper-theme">
                 <header className="bg-header"/>
-                {children}
+                <div className="content-wrapper">
+                    <div className="content">
+                        {children}
+                    </div>
+                </div>
+
             </div>
             <Footer/>
         </>

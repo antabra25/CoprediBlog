@@ -15,9 +15,10 @@ import Post from "./components/pages/Post";
 import Hostels from "./components/pages/Hostels";
 import AddHostel from "./components/pages/AddHostel";
 import useUser from "./components/hooks/useUser";
+import RequireAuth from "./components/RequireAuth.jsx";
+import RequireAdmin from "./components/RequireAdmin.jsx";
 import './App.css';
 import './index.css'
-
 
 function App() {
     const {
@@ -35,7 +36,6 @@ function App() {
 
     return (<div className="app">
         <div className="app-container">
-
             <UserContext.Provider value={{currentUser, setCurrentUser, loginUser, logoutUser}}>
                 <div className="app-nav">
                     <Nav/>
@@ -47,16 +47,28 @@ function App() {
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/blog/posts" element={<Posts/>}/>
                     <Route path="/blog/posts/:id" element={<Post/>}/>
-                    <Route path="/blog/posts/new" element={<AddPost/>}/>
-                    <Route path="/blog/posts/:id/edit" element={<AddPost/>}/>
-                    <Route path="/requests" element={<Requests/>}/>
-                    <Route path="/requests/new" element={<AddRequest/>}/>
+
+                    <Route path="/blog/posts/new" element={
+                        <RequireAdmin redirectTo="/login" destination="/blog/posts/new">
+                            <AddPost/>
+                        </RequireAdmin>}/>
+                    <Route path="/blog/posts/edit/:id" element={<AddPost/>}/>
+                    <Route path="/requests" element={
+                        <RequireAuth redirectTo="/login" destination="/request">
+                            <Requests/>
+                        </RequireAuth>}/>
+                    <Route path="/requests/new" element={
+                        <RequireAuth redirectTo="/login" destination="/request/new">
+                            <AddRequest/>
+                        </RequireAuth>}/>
                     <Route path="/hostels" element={<Hostels/>}/>
-                    <Route path="/hostels/new" element={<AddHostel/>}/>
+                    <Route path="/hostels/new" element={
+                        <RequireAdmin redirectTo="/login" destination="/hostels/new">
+                            <AddHostel/>
+                        </RequireAdmin>}/>
                 </Routes>
             </UserContext.Provider>
         </div>
-
     </div>);
 
 }

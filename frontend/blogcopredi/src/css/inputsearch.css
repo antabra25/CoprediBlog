@@ -1,6 +1,6 @@
 
 .input-search{
     box-sizing: border-box;
-    border: 0.5px solid #000000;
+    border: 1px solid #000000;
     @apply bg-dark w-[400px] h-[50px] rounded font-content text-xl text-black font-normal px-4 py-2 focus:outline-none focus:border-earth  ;
 }

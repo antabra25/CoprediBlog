@@ -1,9 +1,23 @@
 .main-wrapper-theme {
 
-  @apply flex flex-col  w-full min-h-screen bg-primary pb-32;
+    @apply flex flex-col  w-full min-h-screen bg-primary pb-32;
 }
 
 .bg-header {
 
-  @apply bg-black w-full h-40;
+    @apply bg-black w-full h-40;
+}
+
+.content-wrapper .content {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }

@@ -4,11 +4,11 @@ import auth from "../../services/authService"
 function useUser() {
     const [currentUser, setCurrentUser] = useState(null)
 
-    const mapUserProperties = ({_id, first_name, last_name, email, isAdmin}) => {
+    const mapUserProperties = ({_id, name, lastName, email, isAdmin}) => {
         return {
             _id,
-            first_name,
-            last_name,
+            name,
+            lastName,
             email,
             isAdmin,
         }

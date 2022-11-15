@@ -1,5 +1,8 @@
 
 .list-posts-wrapper {
+    @apply flex flex-col items-center;
+}
 
-    @apply flex flex-wrap flex-row justify-center  content-start mt-8  w-full gap-x-12 gap-y-32
+.list-posts {
+    @apply flex flex-wrap flex-row justify-start  content-start mt-8  w-full gap-x-12 gap-y-32
 }

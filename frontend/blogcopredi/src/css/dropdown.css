@@ -1,0 +1,12 @@
+
+.drop-down-options-container {
+    @apply absolute bg-white opacity-90 rounded  border w-40 py-2 mt-10
+}
+
+.drop-down-container {
+    @apply relative
+}
+
+.drop-down-button {
+    @apply flex items-center mr-1
+}
