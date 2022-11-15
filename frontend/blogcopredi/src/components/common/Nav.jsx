@@ -17,7 +17,8 @@ const Nav = () => {
         {path: "/hostels", name: "Hostels"},
         {path: "/contact", name: "Contact"},
     ]
-    const options = [{name:'Nuevo',to:'/blog/posts/new'},{name:"Entradas",to:'/blog/posts'}]
+    const postsOptions = [{name: 'Nuevo', to: '/blog/posts/new'}, {name: "Entradas", to: '/blog/posts'}]
+    const hostelsOptions = [{name: 'Nuevo', to: '/hostels/new'}, {name: "Entradas", to: '/hostels'}]
 
     const authBtn = () => {
         return (
@@ -49,9 +50,10 @@ const Nav = () => {
             <div className="nav-links">
                 <ul className="flex space-x-6">
                     <li><NavLink to="/contact">Contacto</NavLink></li>
-                    <li><NavLink to="/hostels">Refugios</NavLink></li>
-                    <DropDown title="Blog" options={options}/>
-
+                    {currentUser && currentUser.isAdmin ? <DropDown title="Refugios" options={hostelsOptions}/> :
+                        <li><NavLink to="/hostels">Refugios</NavLink></li>}
+                    {currentUser && currentUser.isAdmin ? (<DropDown title="Blog" options={postsOptions}/>) : (
+                        <li><NavLink to="/blog/posts">Blog</NavLink></li>)}
                 </ul>
             </div>
             <div className="session-control mr-6">

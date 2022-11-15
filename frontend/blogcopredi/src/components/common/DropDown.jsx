@@ -19,7 +19,7 @@ const DropDown = ({title, options}) => {
                 <div className="absolute bg-white opacity-80 rounded  border w-40 py-2 mt-10">
                     <ul>
                         {options.map((option, index) => (
-                            <li key={index} className="hover:bg-black px-2 py-1"><NavLink className="text-black"
+                            <li key={index} className="hover:bg-dark px-2 py-1"><NavLink className="text-black"
                                                                                           to={option.to}>{option.name}</NavLink>
                             </li>
                         ))}
