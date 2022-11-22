@@ -14,6 +14,7 @@
 @import "./css/inputsearch.css";
 @import "./css/form.css";
 @import "./css/homecard.css";
+@import "./css/addpost.css";
 
 @tailwind base;
 @tailwind components;

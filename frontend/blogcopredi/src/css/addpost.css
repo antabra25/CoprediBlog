@@ -1,0 +1,41 @@
+
+.form-container {
+    @apply flex flex-col w-full items-center gap-y-6
+}
+
+.post-title-input {
+    border-bottom: 1px solid #E3B7A0;
+    backdrop-filter: blur(2px);
+    font-size: 2rem;
+    color: var(--color-black);
+    @apply w-[1000px] h-10 bg-transparent focus:bg-transparent
+}
+
+.post-title-input:focus {
+    outline: none;
+
+}
+
+.post-content-input {
+
+    background: rgba(237, 205, 187, 0.2);
+    border: 0.5px solid #BF9270;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 2rem;
+    font-weight: 400;
+    width: 1000px;
+    height: 500px;
+    resize: none;
+    @apply text-black font-title text-2xl
+
+
+}
+
+.post-content-input:focus {
+    filter: drop-shadow(5px 5px 10px var(--color-earth));
+    outline: none;
+}
+
+.form {
+    @apply flex flex-col gap-y-4
+}

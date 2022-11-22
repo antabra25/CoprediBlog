@@ -1,20 +1,18 @@
 import React from "react";
+import MainWrapper from "../common/MainWrapper.jsx";
 
 const AddHostel = () => {
 
-    const dataInit = {
+    const dataInit = {}
 
-    }
+    const schema = {}
 
-    const schema = {
-
-    }
-
-    const {} = useForm()
     return (
-        <div>
-            <h1>Page AddHostel</h1>
-        </div>
+        <MainWrapper>
+            <h1 className="font-title text-4xl">Page AddHostel</h1>
+        </MainWrapper>
+
+
     )
 }
 

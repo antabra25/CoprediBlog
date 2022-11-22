@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 import {UserContext} from "./components/context/userContext";
 import {Route, Routes, BrowserRouter as Router} from "react-router-dom";
-import {ToastContainer} from "react-toastify";
 import Nav from "./components/common/Nav";
 import Home from "./components/pages/Home";
 import Login from "./components/pages/Login";
