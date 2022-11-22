@@ -9,10 +9,7 @@ import FormFooter from "../common/FormFooter";
 import FormButton from "../common/FormButton";
 import InputField from "../common/InputField";
 import MainWrapper from "../common/MainWrapper";
-
-
 import {useEffect} from "react";
-import {toast} from "react-toastify";
 import {UserContext} from "../context/userContext.js";
 
 const Register = () => {

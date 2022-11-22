@@ -9,7 +9,6 @@ const {currentUser} = useContext(UserContext)
             <h1>Page NewRequest</h1>
         </div>
     )
-
 }
 
 export default AddRequest;

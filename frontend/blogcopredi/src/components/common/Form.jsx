@@ -2,7 +2,7 @@ import React from "react";
 import proTypes from "prop-types";
 
 
-const Form = ({title, size, children, handleSubmit}) => {
+const Form = ({title, size, children, handleSubmit,}) => {
     return (
         <div className={`form-wrapper ${size}`}>
             <h1 className="form-title">{title}</h1>

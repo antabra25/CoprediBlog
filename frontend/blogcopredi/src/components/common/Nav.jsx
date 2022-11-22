@@ -23,8 +23,7 @@ const Nav = () => {
     const authBtn = () => {
         return (
 
-            <div
-                className="nav-button">
+            <div className="nav-button">
                 <NavLink to="/login">Iniciar Sesion</NavLink>
             </div>
 

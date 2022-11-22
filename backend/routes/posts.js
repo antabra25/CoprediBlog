@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const {Post, validatePost} = require('../models/Post')
+const multer = require('multer')
 const validate = require('../middleware/validate')
 const validateObjectId = require('../middleware/validateObjectId')
 const auth = require('../middleware/auth')

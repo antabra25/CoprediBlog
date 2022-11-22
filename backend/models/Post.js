@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
+const {Author} = require('../models/Authors');
+
 
 const postSchema = new mongoose.Schema({
     title: {
@@ -14,8 +16,8 @@ const postSchema = new mongoose.Schema({
         minlength: 100,
     },
     authors: {
-        type: [String],
-        required: true,
+        type: [ mongoose.Schema.Types.ObjectId],
+        ref:'Author'
     },
     date: {
         type: Date,
@@ -23,7 +25,7 @@ const postSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: true
+        required: false
     }
 })
 
@@ -35,7 +37,7 @@ const validatePost = (post) => {
         title: Joi.string().min(3).max(255).required(),
         content: Joi.string().min(100).required(),
         authors: Joi.array().items(Joi.string()).required(),
-        image: Joi.string().required()
+        image: Joi.string()
     })
     return schema.validate(post);
 }

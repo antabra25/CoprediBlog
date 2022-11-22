@@ -38,12 +38,45 @@ const useForm = (dataInit, formSchema) => {
     setFormErrors(errors);
     setFormData(data);
   };
+  const handleCheckboxChange = ({ target: input }) => {
+    const data = { ...formData }
+
+    if (input.checked) {
+      if (Array.isArray(data[input.id])) {
+        const exists = data[input.id].indexOf(input.value)
+        if (exists === -1) {
+          data[input.id].push(input.value)
+        }
+      }
+      else {
+        data[input.id] = true
+      }
+      setFormData(data)
+    }
+    else {
+      if (Array.isArray(data[input.id])) {
+        const result = data[input.id].filter(value => value !== input.value)
+        data[input.id] = result
+      }
+      else {
+        data[input.id] = false
+      }
+      setFormData(data)
+    }
+  }
+
+  const handleSelectChange = ({ target: input }) => {
+    const data = { ...formData }
+    data[input.id] = input.value
+    setFormData(data)
+  }
 
   return {
     formData,
     formErrors,
     setFormErrors,
     handleChange,
+    handleCheckboxChange,
     validate,
   };
 };
