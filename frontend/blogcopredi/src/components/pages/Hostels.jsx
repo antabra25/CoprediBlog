@@ -1,11 +1,11 @@
 import React from "react";
-import MainWrapper from "../common/MainWrapper";
+import Main from "../layout/Main.jsx";
 
 const Hostels = () => {
   return (
-    <MainWrapper>
+    <Main>
       <h1 className="font-extrabold text-8xl text-center">Page Hostels</h1>
-    </MainWrapper>
+    </Main>
   );
 };
 

@@ -1,13 +1,13 @@
 import React from "react";
-import MainWrapper from "../common/MainWrapper";
+import Main from "../layout/Main.jsx";
 import DropDown from "../common/DropDown.jsx";
 
 const Contact = () => {
     return (
-        <MainWrapper>
+        <Main>
             <h1 className="font-extrabold text-8xl text-center"></h1>
 
-        </MainWrapper>
+        </Main>
     );
 };
 

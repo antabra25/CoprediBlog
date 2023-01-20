@@ -1,12 +1,12 @@
 import React from "react";
 import {useContext} from "react";
-import {UserContext} from "../context/userContext";
+import {UserContext} from "../../context/userContext.js";
 import {NavLink} from "react-router-dom";
-import DropDown from "./DropDown.jsx";
-import Button from "./Button";
+import DropDown from "../common/DropDown.jsx";
+import Button from "../common/Button.jsx";
 
 
-const Nav = () => {
+const NavBar = () => {
 
     const {currentUser, logoutUser} = useContext(UserContext)
 
@@ -63,4 +63,4 @@ const Nav = () => {
     )
 }
 
-export default Nav;
+export default NavBar;

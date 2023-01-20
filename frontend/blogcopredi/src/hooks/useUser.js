@@ -1,5 +1,5 @@
 import {useState} from "react"
-import auth from "../../services/authService"
+import auth from "../services/authService.js"
 
 function useUser() {
     const [currentUser, setCurrentUser] = useState(null)

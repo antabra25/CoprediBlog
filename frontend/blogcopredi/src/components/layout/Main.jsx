@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "./Footer.jsx";
 
 
-const MainWrapper = ({children}) => {
+const Main = ({children}) => {
     return (
         <>
             <div className="main-wrapper-theme">
@@ -19,4 +19,4 @@ const MainWrapper = ({children}) => {
     );
 };
 
-export default MainWrapper;
+export default Main;

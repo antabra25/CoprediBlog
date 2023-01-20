@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {UserContext} from "./context/userContext.js";
+import {UserContext} from "../context/userContext.js";
 import {Navigate} from "react-router-dom";
 
 const RequireAdmin = ({redirectTo, destination, children}) => {

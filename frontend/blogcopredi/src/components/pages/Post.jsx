@@ -1,9 +1,9 @@
 import React from "react";
-import MainWrapper from "../common/MainWrapper.jsx";
+import Main from "../layout/Main.jsx";
 
 const Post = ({title, content, image}) => {
     return (
-        <MainWrapper>
+        <Main>
             <div>
                 <h1 className="post-title">{title}</h1>
                 <figure className="">
@@ -16,7 +16,7 @@ const Post = ({title, content, image}) => {
                 </pre>
                 </div>
             </div>
-        </MainWrapper>
+        </Main>
 
     )
 }

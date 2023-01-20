@@ -1,5 +1,5 @@
 import React from "react";
-import MainWrapper from "../common/MainWrapper.jsx";
+import Main from "../layout/Main.jsx";
 
 const AddHostel = () => {
 
@@ -8,9 +8,9 @@ const AddHostel = () => {
     const schema = {}
 
     return (
-        <MainWrapper>
+        <Main>
             <h1 className="font-title text-4xl">Page AddHostel</h1>
-        </MainWrapper>
+        </Main>
 
 
     )

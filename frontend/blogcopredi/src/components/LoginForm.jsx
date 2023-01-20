@@ -2,9 +2,9 @@ import React from "react";
 import Joi from "joi";
 import {useLocation, useNavigate} from "react-router-dom";
 import {useContext} from "react";
-import {UserContext} from "./context/userContext";
-import useForm from "./hooks/useForm.js";
-import FormButton from "./common/FormButton.jsx";
+import {UserContext} from "../context/userContext";
+import useForm from "../hooks/useForm.js";
+import FormButton from "./form/FormButton.jsx";
 import {toast} from "react-toastify";
 import {login} from "../services/usersService.js";
 

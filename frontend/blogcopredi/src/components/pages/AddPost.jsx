@@ -1,13 +1,13 @@
 import React, {useRef, useState} from "react";
 import Joi from "joi";
-import useForm from "../hooks/useForm.js";
-import FormButton from "../common/FormButton.jsx";
-import FormFooter from "../common/FormFooter.jsx";
+import useForm from "../../hooks/useForm.js";
+import FormButton from "../form/FormButton.jsx";
+import FormFooter from "../form/FormFooter.jsx";
 import CheckboxField from "../common/CheckboxField.jsx"
 import {useEffect} from "react";
 import {getAuthors} from "../../services/authorsService.js";
 import {savePost} from "../../services/postsService.js";
-import MainWrapper from "../common/MainWrapper.jsx";
+import Main from "../layout/Main.jsx";
 import config from "../../../config.json";
 
 
@@ -59,7 +59,7 @@ const AddPost = () => {
     } = useForm(dataInit, dataSchema)
     return (
 
-        <MainWrapper>
+        <Main>
             < div className="add-post-wrapper mt-16">
                 <div className="add-post">
                     <form ref={formPost} className="form-container">
@@ -78,7 +78,7 @@ const AddPost = () => {
 
                             </div>
                             <FormFooter>
-                                <FormButton className="w-full h-10 rounded-2xl text-xl bg-amber-200" text="subir"
+                                <FormButton className="w-full h-10 rounded-2xl text-xl bg-bronw-200" text="subir"
                                             validate={validate}/>
                             </FormFooter>
 
@@ -86,7 +86,7 @@ const AddPost = () => {
                     </form>
                 </div>
             </div>
-        </MainWrapper>
+        </Main>
 
     )
 }

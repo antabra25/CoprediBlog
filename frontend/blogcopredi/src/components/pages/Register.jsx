@@ -1,16 +1,16 @@
 import React from "react";
 import Joi from "joi";
-import useForm from "../hooks/useForm";
+import useForm from "../../hooks/useForm";
 import {register} from "../../services/usersService.js";
 import {useContext} from "react";
 import {useNavigate} from "react-router-dom";
-import Form from "../common/Form";
-import FormFooter from "../common/FormFooter";
-import FormButton from "../common/FormButton";
+import Form from "../form/Form.jsx";
+import FormFooter from "../form/FormFooter.jsx";
+import FormButton from "../form/FormButton.jsx";
 import InputField from "../common/InputField";
-import MainWrapper from "../common/MainWrapper";
+import Main from "../layout/Main.jsx";
 import {useEffect} from "react";
-import {UserContext} from "../context/userContext.js";
+import {UserContext} from "../../context/userContext.js";
 
 const Register = () => {
     const navigate = useNavigate();
@@ -73,7 +73,7 @@ const Register = () => {
     useEffect(() => {
 
     }, []);
-    return (<MainWrapper>
+    return (<Main>
         <Form title="Registro" size="w-full" handleSubmit={handleSubmit}>
             <div className="form flex flex-row gap-x-32 justify-center">
                 <div className="column">
@@ -177,7 +177,7 @@ const Register = () => {
                 <FormButton text="Enviar" validate={validate} className="button button-md bg-earth rounded-3xl"/>
             </FormFooter>
         </Form>
-    </MainWrapper>);
+    </Main>);
 };
 
 export default Register;
