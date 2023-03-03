@@ -1,3 +1,4 @@
 {
-  "apiUrl": "http://localhost:3000/api"
+  "apiUrl":"https://3000-antabra25-coprediblog-us1q7q433ye.ws-us89.gitpod.io/api",
+  "apiUrlLocal":"http://localhost:3000/api"
 }
